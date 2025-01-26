@@ -1,5 +1,6 @@
 // import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
+import { useNavigate } from "react-router-dom";
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { FlipText } from "@/components/ui/flip-text";
 import { ShinyButton } from "@/components/ui/shiny-button";
@@ -7,7 +8,10 @@ import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 
 
 
+
 export default function Hero() {
+  const navigate = useNavigate();
+
   const people = [
     {
       id: 1,
@@ -52,41 +56,50 @@ export default function Hero() {
         "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
     },
   ];
+  const handleGetStarted = () => {
+    navigate("/dashboard"); // Replace with your desired route
+  };
 
   return (
-    <div className="flex flex-col items-center justify-center  h-[40vw] border-b-gray-200 border-b-2">
+    <div className="flex flex-col items-center justify-center h-[40vw] border-b-gray-200 border-b-2">
       <div className="z-10 flex items-center justify-center pb-10">
-      <div
-        className={cn(
-          "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
-        )}>
-        <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-          <span>✨ Testing Platform</span>
-        </AnimatedShinyText>
+        <div
+          className={cn(
+            "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+          )}
+        >
+          <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+            <span>✨ Testing Platform</span>
+          </AnimatedShinyText>
+        </div>
       </div>
+
+      {/* Title Section */}
+      <div className="flex mb-1 font-bold tracking-tighter md:text-5xl lg:text-9xl text-black text-center">
+        <FlipText word="Manual" />
+        <h1 className="pl-6 text-[#e4bfc7]">Testing</h1>
+      </div>
+
+      {/* Subtitle and Description Section */}
+      <div className="text-center max-w-3xl">
+        <h2 className="text-xl md:text-3xl font-serif mt-6">
+          "Your Ultimate Guide to{" "}
+          <span className="underline underline-offset-8 decoration-[#e4bfc7]">
+            Manual Testing Interviews
+          </span>"
+        </h2>
+      </div>
+
+      {/* Get Started Button */}
+      <div className="pt-14">
+        <ShinyButton onClick={handleGetStarted}>Get Started</ShinyButton>
+      </div>
+
+      <div className="flex flex-row items-center justify-center mt-20 w-full">
+        <AnimatedTooltip items={people} />
+      </div>
+
+     
     </div>
-      
-    {/* <!-- Title Section --> */}
-    <div className="flex mb-1 font-bold tracking-tighter md:text-5xl lg:text-9xl text-black text-center">
-    <FlipText word="Manual" />
-      <h1 className="pl-6 text-[#e4bfc7]">
-         Testing
-      </h1>
-    </div>
-  
-    {/* <!-- Subtitle and Description Section --> */}
-    <div className="text-center max-w-3xl ">
-      <h2 className="text-xl md:text-3xl font-serif mt-6">
-        "Your Ultimate Guide to <span className="underline underline-offset-8 decoration-[#e4bfc7] ">Manual Testing Interviews"</span>
-      </h2>
-    </div>
-    <div className="pt-14">
-    <ShinyButton>Get Started</ShinyButton>
-    </div>
-    <div className="flex flex-row items-center justify-center mt-10 w-full">
-      <AnimatedTooltip items={people} />
-    </div>
-  </div>
-  
   );
 }

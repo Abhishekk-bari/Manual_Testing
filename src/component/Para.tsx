@@ -1,4 +1,5 @@
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { TextReveal } from "@/components/ui/text-reveal";
+
 
 
 function Para() {
@@ -6,8 +7,8 @@ function Para() {
 
     return (
     <div className="h-[40vw] p-28">
-        <div className="text-3xl"> 
-            <TextGenerateEffect words={words} />
+        <div> 
+            <TextReveal text={words} />
         </div>
     </div>
   )
