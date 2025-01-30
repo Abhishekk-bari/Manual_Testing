@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import { FaBars, FaHome, FaUser, FaCog, FaChartLine } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState(true);
+  const navigate = useNavigate();
+  
+  const handleSettingsClick = () => {
+    navigate("/"); // Navigate to the home page
+  };
 
   const toggleSidebar = () => {
     setIsExpanded(!isExpanded);
@@ -22,7 +28,7 @@ const Sidebar: React.FC = () => {
       </div>
       <nav className="mt-10">
         <ul>
-          <li className="p-3 hover:bg-gray-200 cursor-pointer flex items-center">
+          <li onClick={handleSettingsClick} className="p-3 hover:bg-gray-200 cursor-pointer flex items-center">
             <FaHome className="w-5 h-5 text-black" />
             {isExpanded && <span className="ml-3 text-black">Home</span>}
           </li>
