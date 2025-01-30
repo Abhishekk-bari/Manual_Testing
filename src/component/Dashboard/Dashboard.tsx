@@ -1,16 +1,18 @@
-// import sidebar from '../Dashboard/Sidebar'
+import React from "react";
+import Sidebar from "../Dashboard/Sidebar/Sidebar";
+import Header from "./Header";
+import MainContent from "./MainContent";
 
-import { Sidebar } from "@/components/ui/sidebar";
-
-
-export default function Dashboard() {
+const DashboardLayout: React.FC = () => {
   return (
-    <div>
-      {/* <sidebar /> */}
-      <h1>
-        Hello from dash
-        </h1>
-
+    <div className="flex h-screen">
+      <Sidebar />
+      <div className="flex-1 flex flex-col overflow-hidden">
+        <Header />
+        <MainContent />
+      </div>
     </div>
-  )
-}
+  );
+};
+
+export default DashboardLayout;
