@@ -7,6 +7,7 @@ import MainContent from "./component/Dashboard/MainContent";
 import FunctionalTesting from "./component/Dashboard/Pages/FunctionalTesting";
 import PerformanceTesting from "./component/Dashboard/Pages/PerformanceTesting";
 import Dashboard from "./component/Dashboard/Dashboard";
+import SecurityTesting from "./component/Dashboard/Pages/SecurityTesting";
 
 export default function App() {
   const location = useLocation();
@@ -30,7 +31,8 @@ export default function App() {
           <Route index element={<MainContent />} />
           <Route path="functional-testing" element={<FunctionalTesting />} />
           <Route path="performance-testing" element={<PerformanceTesting />} />
-          {/* Add other category routes here */}
+          <Route path="security-testing" element={<SecurityTesting />} />
+          
         </Route>
       </Routes>
     </div>
