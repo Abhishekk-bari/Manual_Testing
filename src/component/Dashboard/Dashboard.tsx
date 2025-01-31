@@ -1,7 +1,8 @@
 import React from "react";
 import Sidebar from "../Dashboard/Sidebar/Sidebar";
 import Header from "./Header";
-import MainContent from "./MainContent";
+import { Outlet } from "react-router-dom";
+
 
 const DashboardLayout: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ const DashboardLayout: React.FC = () => {
       <Sidebar />
       <div className="flex-1 flex flex-col overflow-hidden">
         <Header />
-        <MainContent />
+        <Outlet /> {/* This will render the nested routes */}
       </div>
     </div>
   );

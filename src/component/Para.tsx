@@ -1,4 +1,5 @@
 import { TextReveal } from "@/components/ui/text-reveal";
+import Feature from "./Feature";
 
 
 
@@ -10,6 +11,7 @@ function Para() {
         <div> 
             <TextReveal text={words} />
         </div>
+        <Feature />
     </div>
   )
 }
