@@ -37,7 +37,7 @@ const SecurityTesting: React.FC = () => {
 
   return (
     <div className="p-6 bg-gradient-to-br from-gray-50 to-gray-100 overflow-y-auto h-screen">
-      <h1 className="text-3xl font-bold mb-6 text-gray-800">Security Testing</h1>
+      <h1 className="text-3xl font-bold mb-6 text-blue-600 text-center">Security Testing</h1>
       <p className="text-gray-700 text-lg mb-8">
         Security testing is a type of software testing that identifies vulnerabilities, threats, and risks in a system to ensure data and resources are protected from potential attacks.
       </p>
