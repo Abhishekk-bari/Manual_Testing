@@ -76,7 +76,7 @@ const Header: React.FC = () => {
           <DrawerTrigger>
           <FaUserAlt className="w-5 h-5 text-black" />
           </DrawerTrigger>
-          <DrawerContent>
+          <DrawerContent className="bg-amber-100">
             <DrawerHeader>
               <DrawerTitle>Welcome to Testing_hub</DrawerTitle>
               <DrawerDescription>

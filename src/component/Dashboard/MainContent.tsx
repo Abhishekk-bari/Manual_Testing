@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaBug, FaTachometerAlt, FaShieldAlt, FaUserCheck, FaMobileAlt, FaCreditCard, FaCode, FaChartLine, FaLock } from "react-icons/fa";
+
 
 const MainContent: React.FC = () => {
   const categories = [
@@ -11,15 +12,37 @@ const MainContent: React.FC = () => {
     { name: "Compatibility Testing", path: "/dashboard/compatibility-testing", icon: <FaMobileAlt className="w-8 h-8 mb-2 text-yellow-600" /> },
   ];
 
+  const marqueeRef = useRef<HTMLParagraphElement | null>(null);
+
+  useEffect(() => {
+    const marquee = marqueeRef.current;
+    let offset = 0;
+    const speed = 0.50; // Adjust speed as needed
+
+    function animate() {
+      if (marquee) {
+        offset -= speed;
+        marquee.style.transform = `translateX(${offset}px)`;
+        if (Math.abs(offset) > marquee.scrollWidth) {
+          offset = window.innerWidth;
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+  }, []);
+
   return (
     <div className="flex-1 p-6 overflow-y-auto h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      <h2 className="text-3xl font-bold mb-6 text-gray-800">Main Content</h2>
-      <p className="text-gray-600 mb-8 text-lg">
+      {/* <h2 className="text-3xl font-bold mb-6 text-gray-800">Main Content</h2> */}
+      <div className="overflow-hidden whitespace-nowrap w-full bg-zinc-800 rounded-xl">
+      <p ref={marqueeRef} className="inline-block text-white font-bold text-2xl">
         Welcome to the Testing Scenarios Dashboard! Here, you can explore a wide range of testing scenarios categorized by different types of testing. Select a category below to get started.
       </p>
+    </div>
 
       {/* Categories Section - Bento Grid Layout */}
-      <div className="mb-12">
+      <div className="mb-12 pt-10">
         <h3 className="text-2xl font-bold mb-6 text-gray-800">Testing Categories</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {categories.map((category, index) => (

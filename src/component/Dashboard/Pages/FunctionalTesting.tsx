@@ -3,11 +3,11 @@ import { FaCheckCircle, FaDatabase, FaCogs, FaShoppingCart,  } from "react-icons
 
 const FunctionalTesting: React.FC = () => {
   return (
-    <div className="p-6 bg-gray-50 text-gray-800 overflow-y-auto h-screen">
+    <div className="p-6 bg-[#216944] overflow-y-auto h-screen">
       {/* Header Section */}
       <div className="mb-8">
         <h1 className="text-center text-4xl font-bold text-blue-600 mb-4">Functional Testing</h1>
-        <p className="text-lg text-gray-700">
+        <p className="text-lg text-white font-semibold">
           Functional testing ensures that a software system meets the functional requirements by validating its expected behavior. It plays a crucial role in delivering a high-quality, reliable application.
         </p>
       </div>
@@ -29,18 +29,18 @@ const FunctionalTesting: React.FC = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Objective 1 */}
-          <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div className="bg-[#174930] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="flex items-center mb-4">
               <FaCheckCircle className="text-green-500 mr-2" />
-              <h3 className="text-xl font-semibold text-gray-900">Meet Requirements</h3>
+              <h3 className="text-xl font-semibold text-white">Meet Requirements</h3>
             </div>
-            <p className="text-gray-700">
+            <p className="text-white text-lg">
               Ensure the software meets all specified functional and non-functional requirements.
             </p>
           </div>
 
           {/* Objective 2 */}
-          <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div className="bg-[#174930] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="flex items-center mb-4">
               <FaCheckCircle className="text-green-500 mr-2" />
               <h3 className="text-xl font-semibold text-gray-900">Verify Features</h3>
@@ -51,7 +51,7 @@ const FunctionalTesting: React.FC = () => {
           </div>
 
           {/* Objective 3 */}
-          <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div className="bg-[#174930] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="flex items-center mb-4">
               <FaCheckCircle className="text-green-500 mr-2" />
               <h3 className="text-xl font-semibold text-gray-900">Identify Defects</h3>
