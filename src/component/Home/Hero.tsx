@@ -61,7 +61,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-[40vw] border-b-gray-200 border-b-2">
+    <div className="flex flex-col items-center justify-center h-[40vw] border-b-gray-200 border-b-2 bg-[#f1f0ee]">
       <div className="z-10 flex items-center justify-center pb-10">
         <div
           className={cn(
@@ -69,15 +69,15 @@ export default function Hero() {
           )}
         >
           <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-            <span>✨ Testing Platform</span>
+            <span>✨ 100+ Test Scenarios</span>
           </AnimatedShinyText>
         </div>
       </div>
 
       {/* Title Section */}
       <div className="flex mb-1 font-bold tracking-tighter md:text-5xl lg:text-9xl text-black text-center">
-        <FlipText word="Manual" />
-        <h1 className="pl-6 text-[#e4bfc7]">Testing</h1>
+        <FlipText word="Test" />
+        <h1 className="pl-6 text-[#e4bfc7]">Wise</h1>
       </div>
 
       {/* Subtitle and Description Section */}
@@ -91,8 +91,9 @@ export default function Hero() {
       </div>
 
       {/* Get Started Button */}
-      <div className="pt-14">
+      <div className="pt-14 flex gap-5 items-center">
         <ShinyButton onClick={handleGetStarted}>Get Started</ShinyButton>
+        <p className="">★★★★ | 4.9 rating Based on 300k Users</p>
       </div>
 
       <div className="flex flex-row items-center justify-center mt-20 w-full">

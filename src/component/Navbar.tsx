@@ -3,7 +3,7 @@ import img from '../assets/XMENsNlQVM6niGdB5uA0y4nD3UE.png'
 
 function Navbar() {
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center bg-[#f1f0ee]">
       <nav className="bg-white border rounded-xl shadow dark:bg-gray-800">
         <div className="container flex items-center justify-center p-3 mx-auto text-gray-600 capitalize dark:text-gray-300">
           <a

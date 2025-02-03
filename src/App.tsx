@@ -13,6 +13,9 @@ import { useEffect, useState } from "react";
 import Features from "./component/Home/Features";
 // import Feature from "./component/Feature";
 
+import Bento from './component/Home/Bento'
+import Review from "./component/Home/Review";
+
 export default function App() {
   const location = useLocation();
   const hideNavbar = location.pathname.startsWith("/dashboard");
@@ -41,6 +44,8 @@ export default function App() {
           element={
             <>
               <Hero />
+              <Review />
+              <Bento />
               <Features />
               {/* <Para /> */}
               {/* <Tabs /> */}
