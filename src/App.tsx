@@ -10,12 +10,11 @@ import Dashboard from "./component/Dashboard/Dashboard";
 import SecurityTesting from "./component/Dashboard/Pages/SecurityTesting";
 import Loader from './component/Loader/Loader'
 import { useEffect, useState } from "react";
-// import Features from "./component/Home/Features";
-// import Feature from "./component/Feature";
 
 import Bento from './component/Home/Bento'
 import Review from "./component/Home/Review";
 import Footer from "./component/Home/Footer";
+import Work from "./component/Home/Work";
 
 export default function App() {
   const location = useLocation();
@@ -48,10 +47,9 @@ export default function App() {
               <Review />
               {/* <Para /> */}
               <Bento />
+              <Work />
               <Footer />
-              {/* <Features /> */}
               {/* <Tabs /> */}
-              {/* <Feature/> */}
             </>
           }
         />

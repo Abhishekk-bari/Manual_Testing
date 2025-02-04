@@ -9,12 +9,12 @@ const FunctionalTesting: React.FC = () => {
       <div>
         <h1 className="text-center text-5xl font-bold text-zinc-800 mb-4">Functional Testing</h1>
         <div className="flex items-center justify-center pt-10">
-        <img src={img} className="w-[78vw] h-[40vw]"/>
+        <img src={img} className="w-[71vw] h-[35vw] rounded-2xl"/>
         </div>
       </div>
       
-      <div className="p-48">
-      <p className="text-lg text-black font-semibold pb-10">
+      <div className="p-50">
+      <p className="text-xl text-black font-semibold pb-10">
           Functional testing ensures that a software system meets the functional requirements by validating its expected behavior. It plays a crucial role in delivering a high-quality, reliable application.
         </p>
   {/* Definition Section */}
@@ -102,11 +102,11 @@ const FunctionalTesting: React.FC = () => {
       </div>
 
       {/* Types of Functional Testing Section */}
-      <div className="mb-8">
+      <div className="mb-8 ">
         <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
           <FaCogs className="mr-2 text-blue-500" /> Types of Functional Testing
         </h2>
-        <ol className="list-decimal list-inside space-y-2 pl-5">
+        <ol className="list-decimal list-inside space-y-2 pl-5 text-lg">
           <li><strong>Unit Testing:</strong> Testing individual software components.</li>
           <li><strong>Integration Testing:</strong> Verifying interactions between modules.</li>
           <li><strong>System Testing:</strong> Testing the entire application.</li>
@@ -119,7 +119,7 @@ const FunctionalTesting: React.FC = () => {
         <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
           <FaShoppingCart className="mr-2 text-purple-500" /> Real-Life Examples
         </h2>
-        <ol className="list-decimal list-inside space-y-2 pl-5">
+        <ol className="list-decimal list-inside space-y-2 pl-5 text-lg">
           <li>
             <strong>Banking Application:</strong> Ensuring correct money transfers between accounts.
           </li>
@@ -140,7 +140,7 @@ const FunctionalTesting: React.FC = () => {
         <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
           <FaDatabase className="mr-2 text-purple-500" /> Popular Functional Testing Tools
         </h2>
-        <ol className="list-decimal list-inside space-y-2 pl-5">
+        <ol className="list-decimal list-inside space-y-2 pl-5 text-lg">
           <li>
             <strong>Selenium:</strong> Automates browser testing.
           </li>
