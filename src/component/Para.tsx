@@ -1,5 +1,5 @@
 import { TextReveal } from "@/components/ui/text-reveal";
-import Feature from "./Feature";
+// import Feature from "./Feature";
 
 
 
@@ -12,7 +12,7 @@ function Para() {
             <TextReveal text={words} />
         </div>
         <div className="w-screen flex items-center justify-start">
-        <Feature />
+        {/* <Feature /> */}
         </div>
     </div>
   )

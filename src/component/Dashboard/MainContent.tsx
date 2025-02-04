@@ -34,12 +34,12 @@ const MainContent: React.FC = () => {
 
   return (
     <div className="flex-1 p-6 overflow-y-auto h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* <h2 className="text-3xl font-bold mb-6 text-gray-800">Main Content</h2> */}
+      {/* <h2 className="text-3xl font-bold mb-6 text-gray-800">Main Content</h2>
       <div className="overflow-hidden whitespace-nowrap w-full bg-zinc-800 rounded-xl">
       <p ref={marqueeRef} className="inline-block text-white font-bold text-2xl">
         Welcome to the Testing Scenarios Dashboard! Here, you can explore a wide range of testing scenarios categorized by different types of testing. Select a category below to get started.
       </p>
-    </div>
+    </div> */}
 
       {/* Categories Section - Bento Grid Layout */}
       <div className="mb-12 pt-10">

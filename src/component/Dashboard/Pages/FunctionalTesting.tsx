@@ -1,23 +1,28 @@
 import React from "react";
+import img from '../../../assets/functional.jpg'
 import { FaCheckCircle, FaDatabase, FaCogs, FaShoppingCart,  } from "react-icons/fa";
 
 const FunctionalTesting: React.FC = () => {
   return (
-    <div className="p-6 bg-[#216944] overflow-y-auto h-screen">
+    <div className=" overflow-y-auto h-screen pt-20">
       {/* Header Section */}
-      <div className="mb-8">
-        <h1 className="text-center text-4xl font-bold text-blue-600 mb-4">Functional Testing</h1>
-        <p className="text-lg text-white font-semibold">
+      <div>
+        <h1 className="text-center text-5xl font-bold text-zinc-800 mb-4">Functional Testing</h1>
+        <div className="flex items-center justify-center pt-10">
+        <img src={img} className="w-[78vw] h-[40vw]"/>
+        </div>
+      </div>
+      
+      <div className="p-48">
+      <p className="text-lg text-black font-semibold pb-10">
           Functional testing ensures that a software system meets the functional requirements by validating its expected behavior. It plays a crucial role in delivering a high-quality, reliable application.
         </p>
-      </div>
-
-      {/* Definition Section */}
-      <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
+  {/* Definition Section */}
+  <div className="mb-8">
+        <h2 className="text-3xl font-semibold text-gray-900 mb-4 flex items-center">
           <FaCogs className="mr-2 text-blue-500" /> Definition
         </h2>
-        <p className="text-gray-700">
+        <p className="text-gray-700 text-2xl">
           Functional testing involves evaluating a software application by providing inputs and verifying outputs against expected results. It covers aspects like user interface, APIs, databases, and business logic.
         </p>
       </div>
@@ -29,67 +34,67 @@ const FunctionalTesting: React.FC = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Objective 1 */}
-          <div className="bg-[#174930] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div className="bg-[#f1fde7] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="flex items-center mb-4">
               <FaCheckCircle className="text-green-500 mr-2" />
-              <h3 className="text-xl font-semibold text-white">Meet Requirements</h3>
+              <h3 className="text-xl font-semibold text-black">Meet Requirements</h3>
             </div>
-            <p className="text-white text-lg">
+            <p className="text-zinc-800 text-lg">
               Ensure the software meets all specified functional and non-functional requirements.
             </p>
           </div>
 
           {/* Objective 2 */}
-          <div className="bg-[#174930] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div className="bg-[#fde7e7] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="flex items-center mb-4">
               <FaCheckCircle className="text-green-500 mr-2" />
-              <h3 className="text-xl font-semibold text-gray-900">Verify Features</h3>
+              <h3 className="text-xl font-semibold text-black">Verify Features</h3>
             </div>
-            <p className="text-gray-700">
+            <p className="text-zinc-800 text-lg">
               Validate that all features and functionalities work as intended without errors.
             </p>
           </div>
 
           {/* Objective 3 */}
-          <div className="bg-[#174930] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div className="bg-[#f1fde7] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="flex items-center mb-4">
               <FaCheckCircle className="text-green-500 mr-2" />
-              <h3 className="text-xl font-semibold text-gray-900">Identify Defects</h3>
+              <h3 className="text-xl font-semibold text-black">Identify Defects</h3>
             </div>
-            <p className="text-gray-700">
+            <p className="text-zinc-800 text-lg">
               Detect and report functional defects to ensure they are fixed before release.
             </p>
           </div>
 
           {/* Objective 4 */}
-          <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div className="bg-[#fde7e7] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="flex items-center mb-4">
               <FaCheckCircle className="text-green-500 mr-2" />
               <h3 className="text-xl font-semibold text-gray-900">Enhance User Experience</h3>
             </div>
-            <p className="text-gray-700">
+            <p className="text-gray-700 text-lg">
               Ensure the software is user-friendly, intuitive, and meets user expectations.
             </p>
           </div>
 
           {/* Objective 5 */}
-          <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div className="bg-[#f1fde7] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="flex items-center mb-4">
               <FaCheckCircle className="text-green-500 mr-2" />
               <h3 className="text-xl font-semibold text-gray-900">Ensure Reliability</h3>
             </div>
-            <p className="text-gray-700">
+            <p className="text-gray-700 text-lg">
               Validate that the software performs consistently under various conditions.
             </p>
           </div>
 
           {/* Objective 6 */}
-          <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div className="bg-[#fde7e7] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="flex items-center mb-4">
               <FaCheckCircle className="text-green-500 mr-2" />
               <h3 className="text-xl font-semibold text-gray-900">Compliance</h3>
             </div>
-            <p className="text-gray-700">
+            <p className="text-gray-700 text-lg">
               Ensure the software complies with industry standards and regulations.
             </p>
           </div>
@@ -150,6 +155,8 @@ const FunctionalTesting: React.FC = () => {
           </li>
         </ol>
       </div>
+</div>
+      
     </div>
   );
 };

@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 
 import Bento from './component/Home/Bento'
 import Review from "./component/Home/Review";
+import Footer from "./component/Home/Footer";
 
 export default function App() {
   const location = useLocation();
@@ -45,9 +46,10 @@ export default function App() {
             <>
               <Hero />
               <Review />
-              <Bento />
-              {/* <Features /> */}
               {/* <Para /> */}
+              <Bento />
+              <Footer />
+              {/* <Features /> */}
               {/* <Tabs /> */}
               {/* <Feature/> */}
             </>

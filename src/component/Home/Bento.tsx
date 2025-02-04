@@ -8,10 +8,10 @@ import dott from "../../assets/dott.png";
 
 import Marquee from "react-fast-marquee";
 
-import logo1 from '../../assets/logo1.png';
-import logo2 from '../../assets/logo2.png';
-import logo3 from '../../assets/logo3.png';
-import logo4 from '../../assets/logo4.png';
+import logo1 from "../../assets/logo1.png";
+import logo2 from "../../assets/logo2.png";
+import logo3 from "../../assets/logo3.png";
+import logo4 from "../../assets/logo4.png";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -41,18 +41,17 @@ const BentoGrid: React.FC = () => {
 
   return (
     <div className="bg-[#0a0904] py-24 sm:py-20 rounded-t-4xl h-fit">
+      <div className="rounded-2xl">
+        <Marquee pauseOnHover className="rounded-xl">
+          <img src={logo1} className="bg-black p-2 mx-4 h-10 w-auto" />
+          <img src={logo2} className="bg-black  p-2 mx-4 h-10 w-auto" />
+          <img src={logo3} className="bg-black  p-2 mx-4 h-10 w-auto" />
+          <img src={logo4} className="bg-black  p-2 mx-4 h-1 w-auto" />
+          <img src={logo1} className="bg-black p-2 mx-4 h-10 w-auto" />
+        </Marquee>
+      </div>
 
-<div className="rounded-2xl">
-  <Marquee pauseOnHover className='rounded-xl'>
-    <img src={logo1} className="bg-black p-2 mx-4 h-10 w-auto" />
-    <img src={logo2} className="bg-black  p-2 mx-4 h-10 w-auto" />
-    <img src={logo3} className="bg-black  p-2 mx-4 h-10 w-auto" />
-    <img src={logo4} className="bg-black  p-2 mx-4 h-1 w-auto" />
-    <img src={logo1} className="bg-black p-2 mx-4 h-10 w-auto" />
-  </Marquee>
-</div>
-
-      <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8 pt-18">
+      <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8 pt-18 ">
         <p className="mx-auto mt-2 text-center text-4xl font-[NippoVariable] text-gray-50 sm:text-6xl">
           Everything You Need <br />
           for Manual Testing
@@ -61,7 +60,7 @@ const BentoGrid: React.FC = () => {
           <img src={dott} className="absolute left-10  w-60 h-60 " />
           {/* Grid Item 1 - Test Scenarios */}
           <div className="relative lg:row-span-2">
-            <div className="absolute inset-px rounded-lg bg-[#f4e6fd] lg:rounded-l-[2rem]"></div>
+            <div className="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
               <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
                 <p className="mt-2 text-xl font-semibold tracking-tight text-gray-950 max-lg:text-center">
@@ -161,7 +160,7 @@ const BentoGrid: React.FC = () => {
                       <div className="border-r border-gray-600/10 px-4 py-2">
                         Postman
                       </div>
-                    </div>
+                    </div>ए
                   </div>
                   <div className="px-6 pt-6 pb-14">
                     <p className="text-white text-sm/6 mb-4">

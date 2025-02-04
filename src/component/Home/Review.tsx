@@ -7,15 +7,14 @@ export default function Review() {
         {
           id: 1,
           img: "/src/assets/Froy2vnjPIvW9tFSC65pPwhHgI.avif",
-          value: "100+",
           label: "SCENARIOS",
         },
-        // {
-        //   id: 2,
-        //   img: "/path-to-image2.jpg",
-        //   value: "15+",
-        //   label: "COURSES",
-        // },
+        {
+          id: 2,
+          img: "/src/assets/sufXHD44N5iIkg4OtSY7l3qUM.png",
+          value: "15+",
+          label: "satisfaction",
+        },
         {
           id: 3,
           img: "/src/assets/T6Ageuu84M7l3T7N5i1ogecTXU.avif",
