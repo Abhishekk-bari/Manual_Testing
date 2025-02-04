@@ -12,6 +12,16 @@
   display: none;
 }
 
+@font-face {
+  font-family: "Bold";   /*Can be any text*/
+  src: local("ChillaxVariable"),
+    url("./fonts/Chillax-Variable.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Bold";   /*Can be any text*/
+  src: local("NippoVariable"),
+    url("./fonts/Nippo-Variable.ttf") format("truetype");
+}
 
 /* ... */
 

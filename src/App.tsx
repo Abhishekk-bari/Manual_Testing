@@ -10,7 +10,7 @@ import Dashboard from "./component/Dashboard/Dashboard";
 import SecurityTesting from "./component/Dashboard/Pages/SecurityTesting";
 import Loader from './component/Loader/Loader'
 import { useEffect, useState } from "react";
-import Features from "./component/Home/Features";
+// import Features from "./component/Home/Features";
 // import Feature from "./component/Feature";
 
 import Bento from './component/Home/Bento'
@@ -46,7 +46,7 @@ export default function App() {
               <Hero />
               <Review />
               <Bento />
-              <Features />
+              {/* <Features /> */}
               {/* <Para /> */}
               {/* <Tabs /> */}
               {/* <Feature/> */}

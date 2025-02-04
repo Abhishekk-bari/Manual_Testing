@@ -5,12 +5,22 @@ import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { FlipText } from "@/components/ui/flip-text";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
+import img from '../../assets/QoTZyI7CkM97mFm0elr4g0yNc.png'
 
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 
 
 
 export default function Hero() {
   const navigate = useNavigate();
+
+  const imgRef = useRef(null);
+
+    useEffect(() => {
+        gsap.fromTo(imgRef.current, { y: -10 }, { y: 10, repeat: -1, yoyo: true, ease: "bounce.in", duration: 1.5 });
+    }, []);
+
 
   const people = [
     {
@@ -56,6 +66,7 @@ export default function Hero() {
         "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
     },
   ];
+  
   const handleGetStarted = () => {
     navigate("/dashboard"); // Replace with your desired route
   };
@@ -90,11 +101,19 @@ export default function Hero() {
         </h2>
       </div>
 
-      {/* Get Started Button */}
-      <div className="pt-14 flex gap-5 items-center">
-        <ShinyButton onClick={handleGetStarted}>Get Started</ShinyButton>
-        <p className="">★★★★ | 4.9 rating Based on 300k Users</p>
-      </div>
+      <div className="relative flex flex-col items-center">
+  {/* Arrow Image - Positioned Absolutely */}
+  <div className="absolute top-[-18px] left-[-50px]">
+    <img ref={imgRef} src={img} alt="Arrow pointing to Get Started" className="w-28 h-28 rotate-[-10deg]" />
+  </div>
+
+  {/* Get Started Button Section */}
+  <div className="pt-14 flex gap-5 items-center">
+    <ShinyButton onClick={handleGetStarted}>Get Started</ShinyButton>
+    <p className="">★★★★ | 4.9 rating Based on 300k Users</p>
+  </div>
+</div>
+
 
       <div className="flex flex-row items-center justify-center mt-20 w-full">
         <AnimatedTooltip items={people} />
