@@ -18,7 +18,7 @@ export default function Hero() {
   const imgRef = useRef(null);
 
     useEffect(() => {
-        gsap.fromTo(imgRef.current, { y: -10 }, { y: 10, repeat: -1, yoyo: true, ease: "bounce.in", duration: 1.5 });
+        gsap.fromTo(imgRef.current, { y: -1 }, { y: 10, repeat: -1, yoyo: true, ease: "bounce.out", duration: 1.5 });
     }, []);
 
 

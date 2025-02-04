@@ -33,7 +33,7 @@ const MainContent: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex-1 p-6 overflow-y-auto h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="flex-1 p-20 overflow-y-auto h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* <h2 className="text-3xl font-bold mb-6 text-gray-800">Main Content</h2>
       <div className="overflow-hidden whitespace-nowrap w-full bg-zinc-800 rounded-xl">
       <p ref={marqueeRef} className="inline-block text-white font-bold text-2xl">
