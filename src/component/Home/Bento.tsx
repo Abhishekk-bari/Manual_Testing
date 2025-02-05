@@ -54,7 +54,7 @@ const BentoGrid: React.FC = () => {
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8 pt-18 ">
         <p className="mx-auto mt-2 text-center text-4xl font-[NippoVariable] text-gray-50 sm:text-6xl">
           Everything You Need <br />
-          for Manual Testing
+          for <span>Manual Testing</span>
         </p>
         <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
           <img src={dott} className="absolute left-10  w-60 h-60 " />

@@ -1,11 +1,12 @@
-
+// import img from '../../assets/Illustration2.png'
+{/* <img src={img}  className="absolute -rotate-80  -bottom-[164vw] w-[40vw] h-[40vw]"/> */}
 
 const Work = () => {
     return (
-        <section className="py-10 bg-[#f6f5f3] sm:py-16 lg:py-24">
+        <section className="py-10 bg-[#f6f5f3] sm:py-16 lg:py-24 ">
             <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="max-w-2xl mx-auto text-center">
-                    <h2 className="text-3xl font-[NippoVariable] leading-tight text-black sm:text-4xl lg:text-6xl">How does it work?</h2>
+                    <h2 className="text-3xl font-[NippoVariable] leading-tight text-black sm:text-4xl lg:text-6xl">How does it <span className="bg-[#b9ff66] rounded-xl">work?</span></h2>
                     {/* <p className="max-w-lg mx-auto mt-4 text-base leading-relaxed text-gray-600">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis.</p> */}
                 </div>
 
