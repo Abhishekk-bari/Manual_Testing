@@ -40,9 +40,9 @@ const MainContent: React.FC = () => {
         Welcome to the Testing Scenarios Dashboard! Here, you can explore a wide range of testing scenarios categorized by different types of testing. Select a category below to get started.
       </p>
     </div> */}
-
+    <div className="w-full md:w-1/3 p-6 bg-gray-50 rounded-xl shadow-md">
       {/* Categories Section - Bento Grid Layout */}
-      <div className="mb-12 pt-10">
+      <div className="mb-12">
         <h3 className="text-2xl font-bold mb-6 text-gray-800">Testing Categories</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {categories.map((category, index) => (
@@ -56,6 +56,7 @@ const MainContent: React.FC = () => {
             </Link>
           ))}
         </div>
+      </div>
       </div>
 
       {/* Popular Scenarios Section - Bento Grid Layout */}

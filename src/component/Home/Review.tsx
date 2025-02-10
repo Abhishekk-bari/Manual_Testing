@@ -25,7 +25,7 @@ export default function Review() {
 
   return (
     <div className="h-20 pb-[48vw] bg-[#f6f5f3] pt-1 ">
-      <img src={png} className="absolute left-[75vw] top-[40vw]" />
+      <img src={png} className="absolute left-[78vw] top-[44vw] w-[15vw]"/>
         <div className='text-center p-20'>
             <h2 className='text-6xl font-[NippoVariable] text-gray-900 pb-2'>Comprehensive <br/> Manual Testing <span className="bg-[#b9ff66] rounded-xl">Resources</span></h2>
             <p className='text-2xl  text-gray-800 mt-2'>Explore a wide range of manual testing scenarios, test cases, and best practices.</p>
