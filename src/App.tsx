@@ -8,6 +8,9 @@ import FunctionalTesting from "./component/Dashboard/Pages/FunctionalTesting";
 import PerformanceTesting from "./component/Dashboard/Pages/PerformanceTesting";
 import Dashboard from "./component/Dashboard/Dashboard";
 import SecurityTesting from "./component/Dashboard/Pages/SecurityTesting";
+import CompatibilityTesting from "./component/Dashboard/Pages/CompatibilityTesting";
+import UsabilityTesting from "./component/Dashboard/Pages/UsabilityTesting";
+
 import Loader from "./component/Loader/Loader";
 import { useEffect, useState } from "react";
 
@@ -65,6 +68,8 @@ export default function App() {
           <Route path="functional-testing" element={<FunctionalTesting />} />
           <Route path="performance-testing" element={<PerformanceTesting />} />
           <Route path="security-testing" element={<SecurityTesting />} />
+          <Route path="usability-testing" element={<UsabilityTesting />} />
+          <Route path="compatibility-testing" element={<CompatibilityTesting />} />
         </Route>
       </Routes>
     </div>

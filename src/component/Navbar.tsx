@@ -7,7 +7,7 @@ function Navbar() {
     const navigate = useNavigate();
 
   return (
-    <div className="flex items-center justify-center bg-[#f1f0ee]">
+    <div className="flex items-center justify-center bg-[#f1f0ee] pt-5">
       <nav className="bg-white border rounded-xl shadow dark:bg-gray-800 cursor-pointer">
         <div className="container flex items-center justify-center p-3 mx-auto text-gray-600 capitalize dark:text-gray-300">
           <a

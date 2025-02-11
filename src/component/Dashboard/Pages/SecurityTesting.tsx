@@ -1,104 +1,156 @@
-import React from "react";
-import { FaShieldAlt, FaLock, FaUserSecret, FaNetworkWired, FaDatabase, FaCode } from "react-icons/fa";
+import React, { useState } from "react";
+import img from "../../../assets/Thumbnils/Security testing.jpg";
+
+import thumb1 from '../../../assets/Thumbnils/Sec-video1.jpg'
+
+import {
+  FaShieldAlt,
+  FaLock,
+  FaListAlt,
+  FaTools,
+} from "react-icons/fa";
+import VideoSuggestion from "@/component/VideoSuggestion/VideoLayout";
+
+type FAQItem = {
+  question: string;
+  answer: string;
+};
+
+const faqData: FAQItem[] = [
+  {
+    question: "What is security testing?",
+    answer:
+      "Security testing is a type of software testing that ensures an application is protected from vulnerabilities, threats, and risks to prevent data breaches and attacks.",
+  },
+  {
+    question: "What are the types of security testing?",
+    answer:
+      "Types of security testing include Vulnerability Scanning, Penetration Testing, Security Auditing, Risk Assessment, and Ethical Hacking.",
+  },
+  {
+    question: "How is security testing different from functional testing?",
+    answer:
+      "Functional testing checks if the application works as expected, while security testing ensures the system is safeguarded against threats and vulnerabilities.",
+  },
+  {
+    question: "What tools are used for security testing?",
+    answer:
+      "Popular tools for security testing include OWASP ZAP, Burp Suite, Metasploit, Nmap, and Nessus.",
+  },
+  {
+    question: "What is the purpose of security testing?",
+    answer:
+      "The purpose of security testing is to identify weaknesses, secure sensitive data, and ensure compliance with security standards.",
+  },
+];
 
 const SecurityTesting: React.FC = () => {
-  const realWorldScenarios = [
-    {
-      title: "Authentication Testing",
-      description: "Test the system's login functionality to ensure it prevents unauthorized access.",
-      icon: <FaLock className="w-8 h-8 text-blue-500" />,
-    },
-    {
-      title: "SQL Injection Testing",
-      description: "Identify vulnerabilities in database queries that could allow attackers to manipulate data.",
-      icon: <FaDatabase className="w-8 h-8 text-red-500" />,
-    },
-    {
-      title: "Cross-Site Scripting (XSS) Testing",
-      description: "Check for vulnerabilities that allow attackers to inject malicious scripts into web pages.",
-      icon: <FaCode className="w-8 h-8 text-green-500" />,
-    },
-    {
-      title: "Penetration Testing",
-      description: "Simulate real-world attacks to identify security weaknesses in the system.",
-      icon: <FaUserSecret className="w-8 h-8 text-purple-500" />,
-    },
-    {
-      title: "Network Security Testing",
-      description: "Evaluate the security of network configurations and protocols to prevent unauthorized access.",
-      icon: <FaNetworkWired className="w-8 h-8 text-yellow-500" />,
-    },
-    {
-      title: "Data Encryption Testing",
-      description: "Ensure sensitive data is encrypted both in transit and at rest to protect it from breaches.",
-      icon: <FaShieldAlt className="w-8 h-8 text-indigo-500" />,
-    },
-  ];
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const toggleAnswer = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
 
   return (
-    <div className="p-6 bg-gradient-to-br from-gray-50 to-gray-100 overflow-y-auto h-screen">
-      <h1 className="text-3xl font-bold mb-6 text-blue-600 text-center">Security Testing</h1>
-      <p className="text-gray-700 text-lg mb-8">
-        Security testing is a type of software testing that identifies vulnerabilities, threats, and risks in a system to ensure data and resources are protected from potential attacks.
-      </p>
+    <div className="overflow-y-auto h-screen pt-18">
+      <div>
+        <h1 className="text-center text-5xl font-bold text-zinc-800 mb-8">
+          Security Testing
+        </h1>
+        <div className="flex items-center justify-center">
+          <img src={img} className="w-[71vw] h-[33vw] rounded-3xl" />
+        </div>
+      </div>
 
-      {/* Key Concepts Section */}
-      <div className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6 text-gray-800">Key Concepts</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
-            <FaShieldAlt className="w-8 h-8 mb-4 text-blue-500" />
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">Vulnerability Assessment</h3>
-            <p className="text-gray-600">Identify and classify security vulnerabilities in the system.</p>
+      <div className="p-45 flex gap-5">
+        <div className="w-1/3 p-4">
+          <h2 className="text-xl font-bold mb-4">Recommended Videos</h2>
+          <a href="https://youtube.com/watch?v=dFJMlBBPcEE" target="_blank" rel="noopener noreferrer">
+            <VideoSuggestion
+              id="example123"
+              title="Security Testing and Its Importance"
+              channelName="SoftwaretestingbyMKT"
+              views={123456789}
+              thumbnail={thumb1}
+            />
+          </a>
+        </div>
+
+        <div className="w-2/3">
+          <p className="text-xl text-black font-semibold pb-10">
+            Security testing ensures that a software system is protected against threats, vulnerabilities, and unauthorized access to maintain data integrity.
+          </p>
+
+          <div className="mb-8">
+            <h2 className="text-3xl font-semibold text-gray-900 mb-4 flex items-center">
+              <FaShieldAlt className="mr-2 text-blue-500" /> Definition
+            </h2>
+            <p className="text-gray-700 text-2xl">
+              Security testing evaluates a system’s ability to protect data and maintain functionality in the presence of potential security threats.
+            </p>
           </div>
-          <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
-            <FaUserSecret className="w-8 h-8 mb-4 text-red-500" />
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">Penetration Testing</h3>
-            <p className="text-gray-600">Simulate attacks to evaluate the system's defenses.</p>
+
+          <div className="mb-8">
+            <h2 className="text-3xl font-semibold text-gray-900 mb-4 flex items-center">
+              <FaTools className="mr-2 text-blue-500" /> Security Testing Tools
+            </h2>
+            <ul className="list-disc list-inside text-gray-700 text-2xl space-y-2">
+              <li>OWASP ZAP</li>
+              <li>Burp Suite</li>
+              <li>Metasploit</li>
+              <li>Nmap</li>
+              <li>Nessus</li>
+            </ul>
           </div>
-          <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
-            <FaLock className="w-8 h-8 mb-4 text-green-500" />
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">Authentication Testing</h3>
-            <p className="text-gray-600">Ensure only authorized users can access the system.</p>
+
+          <div className="mb-8">
+            <h2 className="text-3xl font-semibold text-gray-900 mb-4 flex items-center">
+              <FaListAlt className="mr-2 text-blue-500" /> Types of Security Testing
+            </h2>
+            <ul className="list-disc list-inside text-gray-700 text-2xl space-y-3">
+              <li>Vulnerability Scanning</li>
+              <li>Penetration Testing</li>
+              <li>Security Auditing</li>
+              <li>Risk Assessment</li>
+              <li>Ethical Hacking</li>
+            </ul>
+          </div>
+          <div className="mb-8">
+            <h2 className="text-3xl font-semibold text-gray-900 mb-4 flex items-center">
+              <FaLock className="mr-2 text-blue-500" /> Security Testing in Real-World Scenarios
+            </h2>
+            <ul className="list-disc list-inside text-gray-700 text-2xl space-y-3">
+              <li>Testing a banking app’s authentication system against brute-force attacks</li>
+              <li>Assessing an e-commerce site’s security against SQL injection</li>
+              <li>Validating healthcare portals for data leaks</li>
+              <li>Ensuring cloud-based storage encryption works as expected</li>
+              <li>Checking API security for unauthorized access vulnerabilities</li>
+            </ul>
           </div>
         </div>
       </div>
 
-      {/* Real-World Scenarios Section */}
-      <div className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6 text-gray-800">Real-World Scenarios</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {realWorldScenarios.map((scenario, index) => (
+      <section className="bg-white shadow-md rounded-lg p-16">
+        <h1 className="text-3xl font-bold text-center mb-6">
+          Security Testing FAQs
+        </h1>
+        {faqData.map((faq, index) => (
+          <div key={index} className="mb-4 border-b border-gray-200 pb-4">
             <div
-              key={index}
-              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center hover:scale-105 transform"
+              className="flex justify-between items-center cursor-pointer text-lg font-semibold text-gray-900"
+              onClick={() => toggleAnswer(index)}
             >
-              <div className="mb-4">{scenario.icon}</div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">{scenario.title}</h3>
-              <p className="text-gray-600">{scenario.description}</p>
+              <h2>{faq.question}</h2>
+              <span className="text-xl">
+                {activeIndex === index ? "-" : "+"}
+              </span>
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Best Practices Section */}
-      <div className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6 text-gray-800">Best Practices</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">Regular Security Audits</h3>
-            <p className="text-gray-600">Conduct periodic reviews to identify and fix vulnerabilities.</p>
+            {activeIndex === index && (
+              <p className="mt-2 text-gray-600">{faq.answer}</p>
+            )}
           </div>
-          <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">Use Strong Encryption</h3>
-            <p className="text-gray-600">Encrypt sensitive data to protect it from unauthorized access.</p>
-          </div>
-          <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">Implement Multi-Factor Authentication</h3>
-            <p className="text-gray-600">Add an extra layer of security to user accounts.</p>
-          </div>
-        </div>
-      </div>
+        ))}
+      </section>
     </div>
   );
 };

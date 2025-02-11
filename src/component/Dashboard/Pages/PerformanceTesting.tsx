@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import img from "../../../assets/functional.jpg";
+import img from "../../../assets/Thumbnils/Perfor img.webp";
+
+import thumb1 from '../../../assets/Thumbnils/PerThumbnil.jpg'
+import thumb2 from '../../../assets/Thumbnils/PerThumbnil2.jpg'
+
 import {
-  FaCheckCircle,
-  FaDatabase,
   FaCogs,
-  FaShoppingCart,
   FaGlobe,
   FaListAlt,
   FaTools,
@@ -59,30 +60,30 @@ const PerformanceTesting: React.FC = () => {
           Performance Testing
         </h1>
         <div className="flex items-center justify-center">
-          <img src={img} className="w-[71vw] h-[33vw] rounded-2xl" />
+          <img src={img} className="w-[71vw] h-[33vw] rounded-3xl" />
         </div>
       </div>
 
-      <div className="p-50 flex">
+      <div className="p-45 flex gap-5">
         {/* Recommended Videos Section Moved to Left */}
         <div className="w-1/3 p-4">
           <h2 className="text-xl font-bold mb-4">Recommended Videos</h2>
           <a href="https://youtu.be/4XNDXNBi454?si=XMTEjAIWSMdlnEK2" target="_blank" rel="noopener noreferrer">
     <VideoSuggestion
       id="dQw4w9WgXcQ"
-      title="Rick Astley - Never Gonna Give You Up (Official Music Video)"
-      channelName="RickAstleyVEVO"
+      title="Performance Testing and It's Types With Real life Examples"
+      channelName="TheTestingAcademy Hindi"
       views={123456789}
-      thumbnail="/placeholder.svg?height=720&width=1280"
+      thumbnail={thumb1}
     />
   </a>
   <a href="https://www.youtube.com/watch?v=example456" target="_blank" rel="noopener noreferrer">
     <VideoSuggestion
       id="example456"
-      title="The Most Beautiful Places on Earth You Must Visit"
-      channelName="Travel Enthusiast"
+      title="Performance Testing with Real life examples"
+      channelName="Gate Smashers"
       views={5432109}
-      thumbnail="/placeholder.svg?height=720&width=1280"
+      thumbnail={thumb2}
     />
   </a>
         </div>

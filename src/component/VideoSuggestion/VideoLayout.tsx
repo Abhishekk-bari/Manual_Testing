@@ -11,7 +11,7 @@ export default function VideoSuggestion({ id, title, channelName, views, thumbna
   return (
     <div className="flex flex-col sm:flex-row items-start gap-2 max-w-md hover:bg-gray-100 transition-colors duration-200 p-2 rounded-lg">
       <a
-        href={`https://www.youtube.com/watch?v=${id}`}
+        // href={`https://www.youtube.com/watch?v=${id}`}
         target="_blank"
         rel="noopener noreferrer"
         className="relative w-full sm:w-40 aspect-video rounded-lg overflow-hidden"

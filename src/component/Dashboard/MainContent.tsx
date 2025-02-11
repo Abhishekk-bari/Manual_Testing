@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { FaBug, FaTachometerAlt, FaShieldAlt, FaUserCheck, FaMobileAlt, FaCreditCard, FaCode, FaChartLine, FaLock } from "react-icons/fa";
+import { FaBug, FaTachometerAlt, FaShieldAlt, FaUserCheck, FaMobileAlt, FaCreditCard, FaCode, FaChartLine, FaLock, FaUser, FaSearch, FaTruck } from "react-icons/fa";
 
 
 const MainContent: React.FC = () => {
@@ -11,6 +11,15 @@ const MainContent: React.FC = () => {
     { name: "Usability Testing", path: "/dashboard/usability-testing", icon: <FaUserCheck className="w-8 h-8 mb-2 text-green-600" /> },
     { name: "Compatibility Testing", path: "/dashboard/compatibility-testing", icon: <FaMobileAlt className="w-8 h-8 mb-2 text-yellow-600" /> },
   ];
+  const scenarios = [ 
+    { name: "Login Page Testing", path: "/dashboard/login-testing", icon: <FaBug className="w-8 h-8 mb-2 text-blue-600" /> },
+    { name: "User Registration Testing", path: "/dashboard/registration-testing", icon: <FaUserCheck className="w-8 h-8 mb-2 text-green-600" /> },
+    { name: "Checkout & Payment Testing", path: "/dashboard/payment-testing", icon: <FaCreditCard className="w-8 h-8 mb-2 text-purple-600" /> },
+    { name: "Profile Management Testing", path: "/dashboard/profile-testing", icon: <FaUser className="w-8 h-8 mb-2 text-orange-600" /> },
+    { name: "Search & Filter Testing", path: "/dashboard/search-testing", icon: <FaSearch className="w-8 h-8 mb-2 text-yellow-600" /> },
+    { name: "Order History & Tracking", path: "/dashboard/order-tracking", icon: <FaTruck className="w-8 h-8 mb-2 text-red-600" /> },
+];
+
 
   const marqueeRef = useRef<HTMLParagraphElement | null>(null);
 
@@ -34,96 +43,84 @@ const MainContent: React.FC = () => {
 
   return (
     <div className="flex-1 p-20 overflow-y-auto h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* <h2 className="text-3xl font-bold mb-6 text-gray-800">Main Content</h2>
-      <div className="overflow-hidden whitespace-nowrap w-full bg-zinc-800 rounded-xl">
-      <p ref={marqueeRef} className="inline-block text-white font-bold text-2xl">
-        Welcome to the Testing Scenarios Dashboard! Here, you can explore a wide range of testing scenarios categorized by different types of testing. Select a category below to get started.
-      </p>
-    </div> */}
-    <div className="w-full md:w-1/3 p-6 bg-gray-50 rounded-xl shadow-md">
-      {/* Categories Section - Bento Grid Layout */}
-      <div className="mb-12">
-        <h3 className="text-2xl font-bold mb-6 text-gray-800">Testing Categories</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-          {categories.map((category, index) => (
-            <Link
-              key={index}
-              to={category.path}
-              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center justify-center text-center hover:scale-105 transform hover:bg-gradient-to-br hover:from-gray-50 hover:to-gray-100"
-            >
-              {category.icon}
-              <span className="text-lg font-semibold text-gray-700">{category.name}</span>
-            </Link>
-          ))}
-        </div>
-      </div>
-      </div>
-
-      {/* Popular Scenarios Section - Bento Grid Layout */}
-      <div className="mb-12">
-        <h3 className="text-2xl font-bold mb-6 text-gray-800">Popular Scenarios</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 hover:scale-105 transform">
-            <div className="flex items-center mb-3">
-              <FaCreditCard className="w-6 h-6 mr-2 text-blue-500" />
-              <h4 className="text-xl font-semibold text-gray-800">Login Functionality Testing</h4>
+      <div className="flex">
+        {/* Testing Categories Section - Bento Grid Layout */}
+        <div className="w-1/5 p-6 border border-zinc-800 rounded-xl shadow-md mr-4 h-[35vw]">
+          {/* Categories Section - Bento Grid Layout */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold mb-6 text-gray-800">Testing Categories</h3>
+            <div className="grid grid-cols-1 sm:grid-rows-2 lg:grid-rows-3 xl:grid-rows-5 gap-6">
+              {categories.map((category, index) => (
+                <Link
+                  key={index}
+                  to={category.path}
+                  className="bg-white p-6 flex flex-row items-center justify-center text-center"
+                >
+                  {category.icon}
+                  <span className="text-lg font-semibold text-gray-700">{category.name}</span>
+                </Link>
+              ))}
             </div>
-            <p className="text-gray-600">
-              Test cases for validating login functionality, including username, password, and error handling.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 hover:scale-105 transform">
-            <div className="flex items-center mb-3">
-              <FaCode className="w-6 h-6 mr-2 text-purple-500" />
-              <h4 className="text-xl font-semibold text-gray-800">Payment Gateway Testing</h4>
-            </div>
-            <p className="text-gray-600">
-              Test cases for ensuring payment gateway integration works correctly.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 hover:scale-105 transform">
-            <div className="flex items-center mb-3">
-              <FaChartLine className="w-6 h-6 mr-2 text-green-500" />
-              <h4 className="text-xl font-semibold text-gray-800">API Endpoint Testing</h4>
-            </div>
-            <p className="text-gray-600">
-              Test cases for validating API endpoints, including status codes and response data.
-            </p>
           </div>
         </div>
-      </div>
 
-      {/* Recently Added Scenarios Section - Bento Grid Layout */}
-      <div className="mb-12">
-        <h3 className="text-2xl font-bold mb-6 text-gray-800">Recently Added Scenarios</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 hover:scale-105 transform">
-            <div className="flex items-center mb-3">
-              <FaMobileAlt className="w-6 h-6 mr-2 text-yellow-500" />
-              <h4 className="text-xl font-semibold text-gray-800">Mobile App Compatibility Testing</h4>
+        <div className="flex-1">
+          {/* Recently Added Scenarios Section - Bento Grid Layout */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold mb-6 text-gray-800">Recently Added Scenarios</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 hover:scale-105 transform">
+                <div className="flex items-center mb-3">
+                  <FaMobileAlt className="w-6 h-6 mr-2 text-yellow-500" />
+                  <h4 className="text-xl font-semibold text-gray-800">Mobile App Compatibility Testing</h4>
+                </div>
+                <p className="text-gray-600">
+                  Test cases for ensuring app compatibility across different devices and operating systems.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 hover:scale-105 transform">
+                <div className="flex items-center mb-3">
+                  <FaTachometerAlt className="w-6 h-6 mr-2 text-red-500" />
+                  <h4 className="text-xl font-semibold text-gray-800">Load Testing</h4>
+                </div>
+                <p className="text-gray-600">
+                  Test cases for evaluating system performance under expected load conditions.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 hover:scale-105 transform">
+                <div className="flex items-center mb-3">
+                  <FaLock className="w-6 h-6 mr-2 text-indigo-500" />
+                  <h4 className="text-xl font-semibold text-gray-800">Security Testing</h4>
+                </div>
+                <p className="text-gray-600">
+                  Test cases for identifying vulnerabilities and ensuring data security.
+                </p>
+              </div>
             </div>
-            <p className="text-gray-600">
-              Test cases for ensuring app compatibility across different devices and operating systems.
-            </p>
           </div>
-          <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 hover:scale-105 transform">
-            <div className="flex items-center mb-3">
-              <FaTachometerAlt className="w-6 h-6 mr-2 text-red-500" />
-              <h4 className="text-xl font-semibold text-gray-800">Load Testing</h4>
-            </div>
-            <p className="text-gray-600">
-              Test cases for evaluating system performance under expected load conditions.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 hover:scale-105 transform">
-            <div className="flex items-center mb-3">
-              <FaLock className="w-6 h-6 mr-2 text-indigo-500" />
-              <h4 className="text-xl font-semibold text-gray-800">Security Testing</h4>
-            </div>
-            <p className="text-gray-600">
-              Test cases for identifying vulnerabilities and ensuring data security.
-            </p>
-          </div>
+
+                    {/* Popular Scenarios Section - Table List Layout */}
+<div className="mb-12 p-6 border border-zinc-800 rounded-xl shadow-md h-[35vw] overflow-y-auto">
+    <h3 className="text-2xl font-bold mb-6 text-gray-800">Popular Scenarios</h3>
+    <table className="w-full">
+        <tbody>
+            {scenarios.map((scenario, index) => (
+                <tr key={index} className="hover:bg-gray-100 transition-colors duration-200">
+                    <td className="p-2 border-b border-gray-200">
+                        <Link
+                            to={scenario.path}
+                            className="flex items-center space-x-3"
+                        >
+                            {scenario.icon}
+                            <span className="text-lg font-semibold text-gray-700">{scenario.name}</span>
+                        </Link>
+                    </td>
+                </tr>
+            ))}
+        </tbody>
+    </table>
+</div>
+
         </div>
       </div>
 
