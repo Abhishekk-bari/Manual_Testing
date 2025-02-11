@@ -24,7 +24,7 @@ import Login from "./component/Home/Navbar Pages/Login";
 
 export default function App() {
   const location = useLocation();
-  const hideNavbar = location.pathname.startsWith("/dashboard");
+  const hideNavbar = location.pathname.startsWith("/dashboard") || location.pathname === "/login";
   const [isLoading, setIsLoading] = useState(true); // Add loading state
 
   // Simulate loading delay (replace with actual loading logic if needed)
