@@ -33,11 +33,11 @@ export default function Review() {
         {/* <div className='flex justify-center'>
             <img ref={imgRef} src={img} className='w-48 h-48'/>
         </div> */}
-    <div className="flex flex-wrap justify-center gap-20 p-6 h-[30vw]">
+    <div className="flex flex-wrap justify-center gap-20 p-10">
       {stats.map((stat) => (
         <div
           key={stat.id}
-          className="flex flex-col items-center p-6 bg-gray-50 backdrop-blur-lg shadow-lg rounded-2xl w-[25vw] h-[20vw] text-center transition-transform transform hover:scale-105"
+          className="flex flex-col items-center p-6 bg-gray-50 backdrop-blur-lg shadow-lg rounded-2xl w-[18vw] h-[15vw] text-center transition-transform transform hover:scale-105"
         >
           <img src={stat.img} alt={stat.label} className="w-32 h-32 mb-1" />
           <NumberTicker value={100} className="text-5xl font-bold" />
