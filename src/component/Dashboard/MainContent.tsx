@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import search from '../../assets/Thumbnils/icons/Search-.png'
 import {
   FaBug,
   FaTachometerAlt,
@@ -17,12 +18,13 @@ import {
   FaGlobe,
 } from "react-icons/fa";
 
+
 const MainContent: React.FC = () => {
   const categories = [
     {
       name: "Functional Testing",
       path: "/dashboard/functional-testing",
-      icon: <FaBug className="w-4 h-4 mb-2 text-blue-600" />,
+      icon: <FaBug className="w-6 h-6 mb-2 text-blue-600" />,
     },
     {
       name: "Performance Testing",
@@ -145,8 +147,9 @@ const MainContent: React.FC = () => {
     "Login scenarios...",
     "Functional testing...",
   ];
+
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
-  
+
   useEffect(() => {
     const interval = setInterval(() => {
       setPlaceholderIndex((prevIndex) => (prevIndex + 1) % placeholders.length);
@@ -155,47 +158,46 @@ const MainContent: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-screen h-screen flex flex-row p-3">
-      {/* First Row - Table */}
-      <div className="w-full flex-1 justify-center mb-4 border">
-        <h3 className="text-xl font-bold mb-5 text-gray-800">Testing Categories</h3>
-        <ul className="space-y-2">
-          {categories.map((category, index) => (
-            <li key={index} className="flex items-center p-5">
-              {category.icon}
-              <span className="text-lg font-semibold text-gray-700 ml-2">
-                {category.name}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Middle Row - Search Functionality */}
-      <div className="w-[280vw] flex flex-col justify-center items-center text-center mb-4">
-        <h1 className="text-4xl sm:text-7xl font-bold text-black mb-6">
-          Search Your Scenarios
-        </h1>
-        <div className="relative sm:w-2/3">
-          <input
-            type="text"
-            className="w-full p-3 border-2 border-gray-400 rounded-lg focus:outline-none focus:border-blue-500"
-            placeholder={placeholders[placeholderIndex]}
-            />
-          <button className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
-            Search
-          </button>
-        </div>
-      </div>
-
-      {/* Right Row - List of Names */}
-      <div className="w-full flex justify-center border">
-        
+    <div className="w-screen h-screen flex">
+    {/* Recommended Videos Section Moved to Left */}
+    <div className="w-1/7 p-4 mt-28">
+      <h2 className="text-xl font-bold mb-4">Recommended Videos</h2>
+      <a href="https://youtu.be/4XNDXNBi454?si=XMTEjAIWSMdlnEK2" target="_blank" rel="noopener noreferrer">
+        {/* <VideoSuggestion
+          id="dQw4w9WgXcQ"
+          title="Performance Testing and It's Types With Real life Examples"
+          channelName="TheTestingAcademy Hindi"
+          views={123456789}
+          thumbnail={thumb1}
+        /> */}
+      </a>
+      <a href="https://www.youtube.com/watch?v=example456" target="_blank" rel="noopener noreferrer">
+        {/* <VideoSuggestion
+          id="example456"
+          title="Performance Testing with Real life examples"
+          channelName="Gate Smashers"
+          views={5432109}
+          thumbnail={thumb2}
+        /> */}
+      </a>
+    </div>
+    
+    {/* Main Content Section */}
+    <div className="flex flex-col items-center justify-center flex-1 min-h-screen">
+      <h1 className="text-8xl text-center mb-6 font-[BoskaVariable]">Search Your Scenarios</h1>
+      <div className="flex gap-1">
+        <input
+          type="text"
+          placeholder={placeholders[placeholderIndex]}          
+          className="w-80 p-2 rounded-lg border border-gray-600 text-zinc-800"
+        />
+        <img className="w-12 h-12" src={search} />
       </div>
     </div>
+  </div>
+  
   );
 };
 
 export default MainContent;
 
-//done some change
