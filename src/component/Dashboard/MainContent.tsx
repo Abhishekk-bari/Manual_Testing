@@ -16,6 +16,7 @@ import {
   FaExclamationTriangle,
   FaLanguage,
   FaGlobe,
+  FaFilePdf,
 } from "react-icons/fa";
 
 
@@ -51,7 +52,7 @@ const MainContent: React.FC = () => {
   const scenarios = [
     {
       name: "Login Page Testing",
-      path: "/dashboard/login-testing",
+      path: "/dashboard/loginpage-testing",
       icon: <FaBug className="w-6 h-7 mb-2 text-blue-600" />,
     },
     {
@@ -125,8 +126,8 @@ const MainContent: React.FC = () => {
 
   useEffect(() => {
     const marquee = marqueeRef.current;
-    let offset = 0;
-    const speed = 0.5; // Adjust speed as needed
+    let offset = 1;
+    const speed = 0.8; // Adjust speed as needed
 
     function animate() {
       if (marquee) {
@@ -157,46 +158,102 @@ const MainContent: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const pdfs = [
+    {
+      name: "Manual Testing ",
+      path: "../../assets/pdf/Manual testing.pdf",
+    },
+    {
+      name: "Selenium ",
+      path: "../../assets/pdf/selenium.pdf",
+    },
+    {
+      name: "API Testing ",
+      path: "../../assets/pdf/API.pdf",
+    },
+    {
+      name: "Test Management ",
+      path: "../../assets/pdf/Test Managment.pdf",
+    },
+  ];
+
   return (
-    <div className="w-screen h-screen flex">
-    {/* Recommended Videos Section Moved to Left */}
-    <div className="w-1/7 p-4 mt-28">
-      <h2 className="text-xl font-bold mb-4">Recommended Videos</h2>
-      <a href="https://youtu.be/4XNDXNBi454?si=XMTEjAIWSMdlnEK2" target="_blank" rel="noopener noreferrer">
-        {/* <VideoSuggestion
-          id="dQw4w9WgXcQ"
-          title="Performance Testing and It's Types With Real life Examples"
-          channelName="TheTestingAcademy Hindi"
-          views={123456789}
-          thumbnail={thumb1}
-        /> */}
-      </a>
-      <a href="https://www.youtube.com/watch?v=example456" target="_blank" rel="noopener noreferrer">
-        {/* <VideoSuggestion
-          id="example456"
-          title="Performance Testing with Real life examples"
-          channelName="Gate Smashers"
-          views={5432109}
-          thumbnail={thumb2}
-        /> */}
-      </a>
-    </div>
-    
+    <div className="w-screen h-screen flex bg-gray-50">
+    {/* Sidebar for Categories */}
+    <div className="w-1/7 h-screen p-4 bg-[#b7d4d8] rounded-r-3xl shadow-lg">
+      <h3 className="text-2xl font-bold mb-1 pt-20 text-gray-800">Testing Categories</h3>
+      <ul className="space-y-0 pt-5">
+        {categories.map((category, index) => (
+          <li key={index}>
+            <Link to={category.path} className="flex items-center p-2 hover:bg-gray-100 rounded-lg transition-all duration-300">
+            {category.icon}
+            <span className="text-xl font-semibold text-gray-700 ml-2">
+              {category.name}
+            </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+
+      {/* PDF Section */}
+      <div className="mt-20">
+          <h3 className="text-2xl font-bold mb-5 text-gray-800">Question & Answers</h3>
+          <ul className="space-y-1 pt-2">
+            {pdfs.map((pdf, index) => (
+              <li key={index} className="flex items-center p-2 hover:bg-gray-100 rounded-lg transition-all duration-300">
+                <FaFilePdf className="w-6 h-6 text-red-600" />
+                <a
+                  href={pdf.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg font-semibold text-gray-700 ml-2 hover:text-blue-600"
+                >
+                  {pdf.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
     {/* Main Content Section */}
-    <div className="flex flex-col items-center justify-center flex-1 min-h-screen">
-      <h1 className="text-8xl text-center mb-6 font-[BoskaVariable]">Search Your Scenarios</h1>
-      <div className="flex gap-1">
+    <div className="flex-1 min-h-screen p-8">
+      <h1 className="text-6xl text-center mb-6 font-[BoskaVariable] text-gray-800">Search Your Scenarios</h1>
+      <div className="flex items-center justify-center gap-2 mb-12">
         <input
           type="text"
-          placeholder={placeholders[placeholderIndex]}          
-          className="w-80 p-2 rounded-lg border border-gray-600 text-zinc-800"
+          placeholder={placeholders[placeholderIndex]}
+          className="w-80 p-2 rounded-lg border border-gray-300 text-zinc-800 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
         />
-        <img className="w-12 h-12" src={search} />
+        <img className="w-12 h-12 hover:scale-110 transition-all duration-300" src={search} alt="Search" />
+      </div>
+
+      {/* Scenarios Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {scenarios.map((scenario, index) => (
+          <Link
+            key={index}
+            to={scenario.path}
+            className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center space-x-4"
+          >
+            {scenario.icon}
+            <span className="text-xl font-semibold text-gray-700">{scenario.name}</span>
+          </Link>
+        ))}
+      </div>
+
+      {/* Marquee for Announcements */}
+      <div className="mt-12 overflow-hidden">
+        <p
+          ref={marqueeRef}
+          className="text-lg text-gray-600 whitespace-nowrap"
+        >
+          Important Announcement: New features coming soon! Stay tuned for updates.
+        </p>
       </div>
     </div>
   </div>
-  
-  );
+);
 };
 
 export default MainContent;

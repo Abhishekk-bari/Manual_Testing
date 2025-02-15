@@ -1,6 +1,10 @@
 import img from "../../assets/XMENsNlQVM6niGdB5uA0y4nD3UE.png";
+import { useNavigate } from "react-router-dom";
+
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="py-10 bg-gray-50 sm:pt-16 lg:pt-24">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
@@ -13,7 +17,7 @@ const Footer = () => {
               amet sint. Velit officia consequat duis enim velit mollit.
             </p>
 
-            <ul className="flex items-center space-x-3 mt-9">
+            <ul className="flex items-center space-x-3 mt-9 cursor-pointer">
               <li>
                 <a
                   href="#"
@@ -90,7 +94,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          <div className="cursor-pointer">
             <p className="text-sm font-semibold tracking-widest text-gray-400 uppercase">
               Company
             </p>
@@ -98,18 +102,18 @@ const Footer = () => {
             <ul className="mt-6 space-y-4">
               <li>
                 <a
-                  href="#"
+                  onClick={() => navigate("/pricing")}
                   title=""
                   className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
                 >
                   {" "}
-                  About{" "}
+                  Pricing{" "}
                 </a>
               </li>
 
               <li>
                 <a
-                  href="#"
+                  onClick={() => navigate("/features")}
                   title=""
                   className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
                 >

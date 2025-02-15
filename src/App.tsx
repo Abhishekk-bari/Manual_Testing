@@ -21,6 +21,7 @@ import Work from "./component/Home/Work";
 import Features from "./component/Home/Navbar Pages/Features";
 import Pricing from "./component/Home/Navbar Pages/Pricing";
 import Login from "./component/Home/Navbar Pages/Login";
+import LoginPage from "./component/Dashboard/Pages/ChildPages/LoginPage";
 
 export default function App() {
   const location = useLocation();
@@ -70,6 +71,9 @@ export default function App() {
           <Route path="security-testing" element={<SecurityTesting />} />
           <Route path="usability-testing" element={<UsabilityTesting />} />
           <Route path="compatibility-testing" element={<CompatibilityTesting />} />
+          
+          <Route path="loginpage-testing" element={<LoginPage />} />
+
         </Route>
       </Routes>
     </div>
