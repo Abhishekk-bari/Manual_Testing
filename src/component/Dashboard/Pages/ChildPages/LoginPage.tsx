@@ -39,6 +39,7 @@ const LoginPageTesting: React.FC = () => {
   return (
     <div className="overflow-y-auto h-screen pt-18">
       <div>
+        {/* Login page Heading */}
         <h1 className="text-center text-5xl font-bold text-zinc-800 mb-8">
           Login Page Scenarios & Test Cases
         </h1>
