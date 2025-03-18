@@ -4,7 +4,7 @@ import React, { useState } from "react";
 // import thumb1 from "../../../assets/Thumbnils/Comp-Video.jpg";
 
 import { FaCogs, FaGlobe, FaListAlt, FaTools } from "react-icons/fa";
-import VideoSuggestion from "@/component/VideoSuggestion/VideoLayout";
+// import VideoSuggestion from "@/component/VideoSuggestion/VideoLayout";
 
 type FAQItem = {
   question: string;
